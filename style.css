@@ -1,0 +1,640 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+:root {
+  /* Your original colour palette */
+  --green: #A8D5A2;
+  --green-dark: #4F8050;
+  --green-light: #E4EEDB;
+
+  --blue: #B7D9F5;
+  --blue-dark: #4D91D2;
+  --blue-light: #E1EAF5;
+
+  --brown: #D0AE8C;
+  --brown-dark: #765239;
+  --brown-light: #E8D4BE;
+
+  --cream: #F8F5EC;
+  --ink: #493D32;
+  --muted: #786B5E;
+  --white: #FFFFFF;
+
+  /* Extra soft pink for the scrapbook style */
+  --pink: #F8DDE6;
+  --pink-dark: #C45D82;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 7%;
+  background: rgba(248, 245, 236, 0.96);
+  border-bottom: 2px dashed var(--pink);
+}
+
+.logo {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 24px;
+}
+
+.navbar nav a {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.navbar nav a:hover {
+  color: var(--pink-dark);
+}
+
+/* GENERAL SECTION STYLING */
+
+.section {
+  padding: 85px 7%;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 38px;
+}
+
+.eyebrow {
+  color: var(--pink-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.section-heading h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.section-heading > p:last-child {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* 1. HOME */
+
+.hero {
+  min-height: 520px;
+  padding: 100px 7%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background: linear-gradient(
+    120deg,
+    #FFF4F1,
+    var(--cream),
+    #F2E8F8
+  );
+  border-bottom: 2px dashed var(--pink);
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 7vw, 5rem);
+  line-height: 1.15;
+  margin: 10px 0 22px;
+}
+
+.hero h1 span {
+  color: var(--pink-dark);
+  font-style: italic;
+}
+
+.hero-description {
+  max-width: 490px;
+  margin: 0 auto 25px;
+  font-size: 1rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 30px;
+  background: var(--pink-dark);
+  color: var(--white);
+  font-weight: 700;
+  transition: transform 0.2s;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.little-note {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* 2. ABOUT YOU */
+
+.about-section {
+  background: var(--cream);
+}
+
+.qualities-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.quality-card {
+  min-height: 185px;
+  padding: 23px 15px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.quality-card:hover {
+  transform: translateY(-5px);
+}
+
+.quality-card h3 {
+  font-size: 1.08rem;
+  line-height: 1.3;
+  margin: 8px 0 14px;
+}
+
+.quality-card p {
+  font-size: 0.87rem;
+  line-height: 1.65;
+}
+
+.green-card {
+  background: var(--green-light);
+}
+
+.blue-card {
+  background: var(--blue-light);
+}
+
+.brown-card {
+  background: var(--brown-light);
+}
+
+.pink-card {
+  background: var(--pink);
+}
+
+.cream-card {
+  background: #E8E0F8;
+}
+
+/* 3. MEMORY LANE */
+
+.memories-section {
+  background: #FFF0F4;
+  border-top: 2px dashed var(--pink);
+  border-bottom: 2px dashed var(--pink);
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.memory-card {
+  padding: 10px;
+  background: var(--white);
+  box-shadow: 0 5px 12px rgba(73, 61, 50, 0.09);
+  transform: rotate(-1deg);
+  transition: transform 0.2s;
+}
+
+.memory-card:nth-child(2) {
+  transform: rotate(1.5deg);
+}
+
+.memory-card:nth-child(3) {
+  transform: rotate(-0.5deg);
+}
+
+.memory-card:hover {
+  transform: rotate(0deg) translateY(-5px);
+}
+
+.memory-photo {
+  height: 230px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.memory-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-one {
+  background: var(--pink);
+}
+
+.photo-two {
+  background: #E8E0F8;
+}
+
+.photo-three {
+  background: #FFF0BA;
+}
+
+.memory-caption {
+  min-height: 80px;
+  padding: 13px 7px 8px;
+  text-align: center;
+}
+
+.memory-caption h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.memory-caption p {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* 4. FRIENDSHIP TIMELINE */
+
+.timeline-section {
+  background: var(--cream);
+}
+
+.timeline {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 10px 0 10px 30px;
+  border-left: 2px dashed var(--pink-dark);
+}
+
+.timeline-item {
+  position: relative;
+  padding: 0 0 32px 20px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 5px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -38px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  background: var(--pink-dark);
+  border: 3px solid var(--cream);
+  border-radius: 50%;
+}
+
+.timeline-date {
+  color: var(--pink-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.timeline-item h3 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.timeline-item > p:last-child {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* FOOTER */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 25px 7%;
+  background: var(--white);
+  border-top: 1px solid var(--brown-light);
+  font-size: 0.9rem;
+}
+
+.footer a {
+  color: var(--green-dark);
+  font-weight: 700;
+}
+
+/* TABLETS */
+
+@media (max-width: 1000px) {
+  .qualities-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .quality-card:nth-child(4),
+  .quality-card:nth-child(5) {
+    grid-column: auto;
+  }
+
+  .memory-photo {
+    height: 190px;
+  }
+}
+
+/* PHONES */
+
+@media (max-width: 650px) {
+  .navbar {
+    flex-direction: column;
+    padding: 14px 5%;
+    gap: 10px;
+  }
+
+  .navbar nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 17px;
+  }
+
+  .navbar nav a {
+    font-size: 0.85rem;
+  }
+
+  .hero {
+    min-height: 450px;
+    padding: 75px 6%;
+  }
+
+  .section {
+    padding: 65px 6%;
+  }
+
+  .qualities-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .quality-card {
+    padding: 20px 12px;
+  }
+
+  .memory-grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    gap: 25px;
+  }
+
+  .memory-photo {
+    height: 280px;
+  }
+
+  .timeline {
+    padding-left: 22px;
+  }
+
+  .timeline-dot {
+    left: -30px;
+  }
+
+  .timeline-item {
+    padding-left: 14px;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* LETTER */
+
+.letter-section {
+  background: var(--blue-light);
+}
+
+.letter-paper {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: clamp(25px, 5vw, 55px);
+  background: #FFFEFA;
+  border: 2px dashed var(--brown);
+  border-radius: 8px;
+  
+}
+
+.letter-paper p {
+  margin-bottom: 20px;
+  line-height: 1.9;
+}
+
+.letter-paper .letter-greeting {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.letter-signoff {
+  margin-top: 30px;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+
+.letter-signature {
+  color: var(--pink-dark);
+  font-size: 1.15rem;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+/* strawberry supruiseeee */
+
+.surprise-section {
+  background: var(--pink);
+  text-align: center;
+}
+
+.surprise-content {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.surprise-intro {
+  margin: 12px 0 24px;
+}
+
+.surprise-message {
+  margin-top: 35px;
+  animation: revealMessage 0.5s ease;
+}
+
+.surprise-message[hidden] {
+  display: none;
+}
+
+.strawberry-gift {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  padding: 30px;
+  background: #FFFEFA;
+  border: 2px dashed var(--pink-dark);
+  border-radius: 14px;
+}
+
+.strawberry-note {
+  flex: 1;
+  text-align: left;
+}
+
+.strawberry-note h3 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+.strawberry-note > p:not(.eyebrow) {
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+.strawberry-area {
+  width: 180px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.strawberry-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 145px;
+  height: 145px;
+  background: var(--pink);
+  border: 2px dashed var(--pink-dark);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.strawberry-button:hover {
+  transform: scale(1.06) rotate(-5deg);
+}
+
+.strawberry-button:focus-visible {
+  outline: 3px solid var(--green-dark);
+  outline-offset: 5px;
+}
+
+.strawberry {
+  display: inline-block;
+  font-size: 5rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.strawberry-hint {
+  margin-top: 12px;
+  font-weight: 700;
+  color: var(--pink-dark);
+}
+
+.bite-message {
+  min-height: 28px;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.strawberry-button.is-bitten .strawberry {
+  transform: rotate(12deg) scale(0.9);
+}
+
+.strawberry-button.is-gone {
+  background: var(--green-light);
+  border-color: var(--green-dark);
+}
+
+.strawberry-button.is-gone .strawberry {
+  font-size: 3.5rem;
+  transform: rotate(-15deg) scale(0.8);
+}
+
+@keyframes revealMessage {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .strawberry-gift {
+    flex-direction: column;
+    gap: 25px;
+    padding: 24px 20px;
+  }
+
+  .strawberry-note {
+    text-align: center;
+  }
+
+  .strawberry-area {
+    width: 100%;
+  }
+}
